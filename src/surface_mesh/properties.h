@@ -319,6 +319,8 @@ class Property_container {
     Property<T> p = get<T> (name);
     if (!p) {
       p = add<T> (name, t);
+    } else {
+      std::fill(p.vector().begin(), p.vector().end(), t);
     }
     return p;
   }
